@@ -39,7 +39,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ testimonials, logos, faqs }) 
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
                 The Next Level Noting
               </h1>
-              <p>Integrate the Power of Notion and LLama-Agents</p>
+              <p>Integrate the Power of Notion and Langgraph</p>
               <p className='my-8'>
                 <a href='https://github.com/etrobot/noteware' className="bg-blue-500 text-white text-lg px-8 py-3 rounded-full">
                   Get Started
@@ -56,7 +56,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ testimonials, logos, faqs }) 
       </div>
 
 {/* const features = [
-  { icon: '<NotionLogoIcon>', title: 'Notion Empower', description: 'Leverage Notion\'s top-class note-taking editor to call AI agents for content management.' },
+  { icon: '<NotionLogoIcon>', title: 'Notion Empower', description: 'Leverage Notion's top-class note-taking editor to call AI agents for content management.' },
   { icon: 'mdi:robot', title: 'AI Agents', description: 'Multiple AI agents work in the background to streamline your workflow and supercharge your productivity.' },
   { icon: 'mdi:freebsd', title: 'Free AI Resources', description: 'Access all the features and benefits of free AI resource from famous platforms.' },
 ]; */}
