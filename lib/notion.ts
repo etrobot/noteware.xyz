@@ -131,8 +131,6 @@ class NotionApi {
         result.object === 'block'
       );
 
-      console.log(results)
-
       for (const block of validResults) {
         if (block.type === 'child_database') {
           const childDatabaseContents = await this.queryChildDatabase(block.id);
