@@ -53,7 +53,7 @@ export default async function NotePage({ params }: Props) {
   const { pageTitle, createdat, category, noteContent } = pageData;
 
   return (
-    <div className='p-4'>
+    <div className='p-4 max-w-6xl mt-20 mx-auto'>
       <h1 className="text-3xl font-bold mb-2">{pageTitle}</h1>
       <h6 className="text-xs text-muted-foreground mb-4">{createdat.slice(0, 10)} {category}</h6>
       {noteContent.map((block: BlockObjectResponse,index: number) => {

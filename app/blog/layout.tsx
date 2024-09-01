@@ -24,12 +24,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // Fetch categories
-  const categories = await notionapi.fetchCategories();
+  // const categories = await notionapi.fetchCategories();
 
 
   return (
     <>
-            <Navbar categories={categories} githubUrl={process.env.GITHUB} twitterUrl={process.env.TWITTER} />
+            {/* <Navbar categories={categories} githubUrl={process.env.GITHUB} twitterUrl={process.env.TWITTER} /> */}
           <main className='mx-auto max-w-3xl mt-12'>
             {children}
           </main>

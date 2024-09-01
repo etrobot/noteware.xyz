@@ -71,7 +71,7 @@ class NotionApi {
     if (!status) {
       const lastStatusOptions = await this.getLastStatusOptions();
       if (lastStatusOptions.length > 0) {
-        status = lastStatusOptions.slice(-1)[0].name;
+        status = lastStatusOptions.slice(-2)[0].name;
       }
     }
 
@@ -85,7 +85,7 @@ class NotionApi {
     }
 
     filters.push({
-      property: 'Last edited time',
+      property: 'Created time',
       date: {
         on_or_after: startDate,
         on_or_before: endDate,
@@ -99,7 +99,7 @@ class NotionApi {
       },
       sorts: [
         {
-          property: 'Last edited time',
+          property: 'Created time',
           direction: sortOrder,
         },
       ],
@@ -110,9 +110,7 @@ class NotionApi {
 
   async getPage(pageId: string) {
     const page = await this.notion.pages.retrieve({ page_id: pageId });
-    console.log(page)
     const blocks = await this.getBlocks(pageId);
-    console.log(blocks)
     return {
       page,
       content: blocks,

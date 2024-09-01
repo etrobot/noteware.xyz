@@ -3,23 +3,29 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { TwitterX, Github } from '@/components/ui/social-icons';
+import { HamburgerMenuIcon,Cross1Icon } from '@radix-ui/react-icons';
 
 interface NavbarProps {
-  categories: { id: string; name: string }[];
+  categories?: { id: string; name: string }[];
   githubUrl?: string;
   twitterUrl?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ categories, githubUrl, twitterUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className=" top-0 z-50 flex items-center md:justify-between md:shrink-0  w-full p-2 bg-background bg-opacity-80">
+    <header className="fixed top-0 flex items-center md:justify-between md:shrink-0  w-full p-2 bg-background bg-opacity-80">
       <div className="absolute top-2 right-2 "><ThemeToggle /></div>
-    <nav className="py-2 relative">
-      <div className="container mx-auto px-4">
+      <button 
+            onClick={toggleMenu}
+            className="md:hidden absolute w-10 h-10 left-2 top-2"
+          >
+            {isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
+        </button>
+    <nav>
+      <div className="mx-auto p-2">
         <div className="flex justify-between items-center">
           <ul className={`
             md:flex md:space-x-4 md:items-center
@@ -46,16 +52,16 @@ const Navbar: React.FC<NavbarProps> = ({ categories, githubUrl, twitterUrl }) =>
             </li>
             <li key="all">
               <Link href="/blog" onClick={() => setIsOpen(false)}>
-                All
+                Blog
               </Link>
             </li>
-            {categories.map((category) => (
+            {/* {categories.map((category) => (
               <li key={category.id}>
                 <Link href={`/blog/${encodeURIComponent(category.name)}`} onClick={() => setIsOpen(false)}>
                   {category.name}
                 </Link>
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
       </div>

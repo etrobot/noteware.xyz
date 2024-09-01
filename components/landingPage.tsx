@@ -29,17 +29,8 @@ interface LandingPageProps {
 const LandingPage: React.FC<LandingPageProps> = ({ testimonials, logos, faqs }) => {
   return (
     <div>
-      <div id="hero" className="py-20 relative">
-        <svg className="radial-gradient absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-          <defs>
-            <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" style={{ stopColor: 'rgb(255,255,255,0.4)' }} />
-              <stop offset="100%" style={{ stopColor: 'rgba(255,255,255,0)' }} />
-            </radialGradient>
-          </defs>
-          <circle cx="50" cy="50" r="50" fill="url(#gradient)" />
-        </svg>
-        <div className="relative mx-auto px-4 max-w-6xl z-10">
+      <div id="hero" className='my-20'>
+        <div className="relative mx-auto px-4 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full max-w-6xl mb-8 md:mb-0 text-opacity-75 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -50,7 +41,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ testimonials, logos, faqs }) 
               </h1>
               <p>Integrate the Power of Notion and LLama-Agents</p>
               <p className='my-8'>
-                <a className="bg-blue-500 text-white text-lg px-8 py-3 rounded-full">
+                <a href='https://github.com/etrobot/noteware' className="bg-blue-500 text-white text-lg px-8 py-3 rounded-full">
                   Get Started
                 </a>
               </p>
