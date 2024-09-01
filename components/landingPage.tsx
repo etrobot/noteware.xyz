@@ -29,7 +29,7 @@ interface LandingPageProps {
 const LandingPage: React.FC<LandingPageProps> = ({ testimonials, logos, faqs }) => {
   return (
     <div>
-      <div id="hero" className='my-20'>
+      <div id="hero" className='my-20 py-10'>
         <div className="relative mx-auto px-4 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full max-w-6xl mb-8 md:mb-0 text-opacity-75 text-center md:text-left">
